@@ -1,3 +1,3 @@
 <script setup lang="ts"></script>
 
-<template>index</template>
+<template><button class="btn">Hello daisyUI</button></template>
