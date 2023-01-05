@@ -10,6 +10,8 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.2.0",
     "daisyui": "^2.46.0",
-    "nuxt": "3.0.0"
+    "nuxt": "3.0.0",
+    "@nuxt/content": "^2.3.0"
   }
+ 
 }
