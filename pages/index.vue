@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import Navbar from "../components/Navbar.vue";
 import Card from "../components/Card.vue";
-</script>
 
-<script setup lang="ts">
 useHead({
   script: [
     { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" },
