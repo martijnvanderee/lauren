@@ -30,3 +30,4 @@ collections:
         widget: 'image'
         required: false
         tagname: ''
+        output_filename_only: true

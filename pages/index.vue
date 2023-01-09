@@ -14,14 +14,24 @@ const query: QueryBuilderParams = {
   path: "/products",
   limit: 5,
 };
+
+function notify(message) {
+  console.log(message);
+}
 </script>
 
 <template>
   <Navbar />
 
   <ContentList :query="query" v-slot="{ list }">
-    <div v-for="article in list" :key="article._path">
+    <div v-for="article in list" :key="article._path" @click="notify(article)">
       <h2>{{ article.title }}</h2>
+      <NuxtImg
+        provider="cloudinary"
+        :src="article.image"
+        width="300"
+        height="200"
+      />
     </div>
   </ContentList>
 
