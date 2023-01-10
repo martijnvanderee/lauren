@@ -11,11 +11,13 @@ withDefaults(defineProps<Props>(), {});
 
 <template>
   <div class="card bg-base-100 shadow-xl">
-    <figure>
-      <figure>
-        <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-      </figure>
-    </figure>
+    <NuxtImg
+      provider="cloudinary"
+      :src="image"
+      width="1000"
+      height="1000"
+      :modifiers="{ effect: 'grayscale' }"
+    />
     <div class="card-body">
       <h2 class="card-title">Shoes!</h2>
       <p>{{ description }}</p>
@@ -27,11 +29,3 @@ withDefaults(defineProps<Props>(), {});
     </div>
   </div>
 </template>
-
-<!-- <NuxtImg
-        provider="cloudinary"
-        :src="image"
-        width="1000"
-        height="1000"
-        :modifiers="{ effect: 'grayscale' }"
-      /> -->

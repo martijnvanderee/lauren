@@ -13,5 +13,9 @@
     "@nuxtjs/tailwindcss": "^6.2.0",
     "daisyui": "^2.46.0",
     "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.6",
+    "pinia": "^2.0.28"
   }
 }

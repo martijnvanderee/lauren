@@ -4,6 +4,7 @@ import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import Card from "../components/Card.vue";
+import { useCartStore } from "../store/cart";
 
 useHead({
   script: [
@@ -15,10 +16,14 @@ const query: QueryBuilderParams = {
   path: "/products",
   limit: 5,
 };
+
+const cart = useCartStore();
 </script>
 
 <template>
   <Navbar />
+  <button @onclick="cart.increaseAmount">test</button>
+  {{ cart.getAmount }}
 
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path
@@ -30,18 +35,20 @@ const query: QueryBuilderParams = {
 
   <section>
     <div class="content">
-      <div class="container">
+      <div class="max-w-5xl mx-auto px-2">
         <div class="row">
           <div class="col-sm-12">
-            <div class="flex flex-wrap -mx-1 lg:-mx-4">
+            <div class="grid grid-cols-3 gap-4">
               <ContentList :query="query" v-slot="{ list }">
                 <div v-for="article in list" :key="article._path">
-                  <Card
-                    :title="article.title"
-                    :description="article.discription"
-                    :image="article.image"
-                    :price="article.price"
-                  />
+                  <div>
+                    <Card
+                      :title="article.title"
+                      :description="article.discription"
+                      :image="article.image"
+                      :price="article.price"
+                    />
+                  </div>
                 </div>
               </ContentList>
             </div>
