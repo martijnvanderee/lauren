@@ -1,51 +1,85 @@
 import { defineStore } from "pinia";
 import { computed } from "vue";
+import { Product } from "../types";
+import { productPath, productFileToProduct } from "../util/constants";
+
+const i = {
+  amount: 0,
+  product: {
+    id: "string",
+    title: "string",
+    description: "string",
+    date: new Date(),
+    price: 4,
+    image: "string",
+  },
+};
+
+interface Cart {
+  product: Product;
+  amount: number;
+  id: string;
+}
 
 export const useCartStore = defineStore("cart", () => {
-  const initialValue = [{ amount: 0, productId: "test" }];
+  const initialValue: Cart[] = [];
   const cart = reactive(initialValue);
 
   const getAmount = computed(() =>
     cart.reduce((partialSum, product) => partialSum + product.amount, 0)
   );
 
-  const increaseAmount = (productId: string) => {
-    console.log("increaseAmount");
-    const index = findIndexById(productId);
-
-    console.log("increaseAmount", index);
+  const increaseAmount = (id: string) => {
+    const index = findIndexById(id);
 
     if (index === -1) return;
 
-    cart[index] = { amount: cart[index].amount + 1, productId };
+    cart[index] = {
+      amount: cart[index].amount + 1,
+      id,
+      product: cart[index].product,
+    };
   };
 
-  const decreaseAmount = (productId: string) => {
-    const index = findIndexById(productId);
+  const decreaseAmount = (id: string) => {
+    const index = findIndexById(id);
 
     if (index === -1) return;
 
-    cart[index] = { amount: cart[index].amount - 1, productId };
+    cart[index] = {
+      amount: cart[index].amount - 1,
+      id,
+      product: cart[index].product,
+    };
   };
 
-  const createProduct = (productId: string) => {
-    const index = findIndexById(productId);
-
-    if (index === -1) cart.push({ productId, amount: 1 });
+  const createProduct = (product: Product) => {
+    cart.push({ product, amount: 1, id: product.id });
   };
 
   const emptyCart = () => cart.splice(0);
 
   const deleteProduct = (id: string) => {
-    const index = findIndexById(id);
+    if (IsInDatabase(id)) return;
 
-    if (index === -1) return;
-
-    cart.splice(index, 1);
+    cart.splice(findIndexById(id), 1);
   };
 
   const findIndexById = (id: string) =>
-    cart.findIndex((product) => product.productId === id);
+    cart.findIndex((product) => product.id === id);
+
+  const IsInDatabase = (id: string) =>
+    !!cart.findIndex((product) => product.id === id);
+
+  const getProductFile = async (id: string) => {
+    const queryString = productPath(id);
+
+    const ProductFile = await queryContent(queryString).findOne();
+
+    return productFileToProduct(ProductFile);
+  };
+
+  const isProductFileValid = () => {};
 
   return {
     cart,
@@ -54,6 +88,8 @@ export const useCartStore = defineStore("cart", () => {
     createProduct,
     emptyCart,
     deleteProduct,
+    IsInDatabase,
+    getProductFile,
     getAmount,
   };
 });

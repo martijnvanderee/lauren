@@ -1,6 +1,6 @@
 ---
 id: sdfkasdpofkop
-title: t
+productTitle: t
 description: sdfsd
 date: 2023-01-08T17:59:16.646Z
 amount: 32

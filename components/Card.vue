@@ -6,7 +6,7 @@ export interface Props {
   price: number;
 }
 
-withDefaults(defineProps<Props>(), {});
+const a = withDefaults(defineProps<Props>(), {});
 </script>
 
 <template>
@@ -19,8 +19,9 @@ withDefaults(defineProps<Props>(), {});
       :modifiers="{ effect: 'grayscale' }"
     />
     <div class="card-body">
-      <h2 class="card-title">Shoes!</h2>
+      <h2 class="card-title">{{ title }}</h2>
       <p>{{ description }}</p>
+      <p>{{ price }}</p>
       <div class="card-actions justify-end">
         <NuxtLink :to="'/product/' + title">
           <button class="btn btn-primary">Buy Now</button>
