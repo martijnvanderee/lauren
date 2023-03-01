@@ -7,7 +7,6 @@ const cart = useCartStore();
 
 <template>
   <div class="navbar bg-primary">
-    {{ cart.getAmount }}
     <div class="flex-1">
       <a class="btn btn-ghost normal-case text-xl text-white">{{
         NAVBAR_TEXT.LOGO
