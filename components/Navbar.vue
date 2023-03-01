@@ -7,17 +7,20 @@ const cart = useCartStore();
 
 <template>
   <div class="navbar bg-primary">
-    {{ cart.getAmount }}
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl text-white">{{
-        NAVBAR_TEXT.LOGO
-      }}</a>
+      <NuxtLink class="btn btn-ghost normal-case text-xl text-white" to="/"
+        >{{ NAVBAR_TEXT.LOGO }}
+      </NuxtLink>
     </div>
     <div class="flex-none">
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-white">
-          <li><a>Item 1</a></li>
-          <li><a>Item 2</a></li>
+          <li>
+            <NuxtLink to="/about">about </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/">home </NuxtLink>
+          </li>
         </ul>
       </div>
       <div class="dropdown dropdown-end">
