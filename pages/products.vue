@@ -8,18 +8,15 @@ const query: QueryBuilderParams = {
 </script>
 
 <template>
+  <Navbar />
   <div class="grid grid-cols-3 gap-4">
     <ContentList :query="query" v-slot="{ list }">
-      <div v-for="article in list" :key="article._path">
+      <div v-for="product in list" :key="product._path">
         <div>
-          <Card
-            :title="article.title"
-            :description="article.description"
-            :image="article.image"
-            :price="article.price"
-          />
+          <Card v-bind="product" />
         </div>
       </div>
     </ContentList>
   </div>
+  <Footer />
 </template>

@@ -1,39 +1,23 @@
 <script setup lang="ts">
 import { useCartStore } from "../store/cart";
+import { NAVBAR_TEXT } from "../util/constants";
 
 const cart = useCartStore();
 </script>
 
 <template>
   <div class="navbar bg-primary">
+    {{ cart.getAmount }}
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl text-white">Lauren Sleich</a>
+      <a class="btn btn-ghost normal-case text-xl text-white">{{
+        NAVBAR_TEXT.LOGO
+      }}</a>
     </div>
     <div class="flex-none">
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-white">
           <li><a>Item 1</a></li>
           <li><a>Item 2</a></li>
-          <!-- <li tabindex="0">
-            <a>
-              Parent
-              <svg
-                class="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-                />
-              </svg>
-            </a>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </li> -->
         </ul>
       </div>
       <div class="dropdown dropdown-end">
@@ -64,7 +48,7 @@ const cart = useCartStore();
         >
           <div class="card-body">
             <span class="font-bold text-lg">Items</span>
-            <span class="text-info">Subtotal: 9</span>
+            <span class="text-info">Subtotal: {{ cart.getAmount }}</span>
             <div class="card-actions">
               <button class="btn btn-primary btn-block">View cart</button>
             </div>

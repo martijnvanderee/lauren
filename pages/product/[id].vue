@@ -7,7 +7,7 @@ const route = useRoute();
 const { IsInDatabase, increaseAmount, createProduct, getProductFile } =
   useCartStore();
 
-const productId = route.params.id as string;
+const id = route.params.id as string;
 
 const handleClick = async (productId: string) => {
   const product = await getProductFile(productId);
@@ -20,7 +20,7 @@ const handleClick = async (productId: string) => {
 
 <template>
   <Navbar />
-  <button @click="handleClick(productId)">kopen</button>
-  product
+  <button @click="handleClick(id)">kopen</button>
+
   <Footer />
 </template>
