@@ -21,6 +21,5 @@ const handleClick = async (productId: string) => {
 <template>
   <Navbar />
   <button @click="handleClick(id)">kopen</button>
-
   <Footer />
 </template>

@@ -7,6 +7,7 @@ const cart = useCartStore();
 
 <template>
   <div class="navbar bg-primary">
+    {{ cart.getAmount }}
     <div class="flex-1">
       <a class="btn btn-ghost normal-case text-xl text-white">{{
         NAVBAR_TEXT.LOGO
@@ -49,7 +50,9 @@ const cart = useCartStore();
             <span class="font-bold text-lg">Items</span>
             <span class="text-info">Subtotal: {{ cart.getAmount }}</span>
             <div class="card-actions">
-              <button class="btn btn-primary btn-block">View cart</button>
+              <button class="btn btn-primary btn-block">
+                <NuxtLink to="/cart">View cart</NuxtLink>
+              </button>
             </div>
           </div>
         </div>
