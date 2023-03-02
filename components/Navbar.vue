@@ -16,10 +16,10 @@ const cart = useCartStore();
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-white">
           <li>
-            <NuxtLink to="/about">about </NuxtLink>
+            <NuxtLink to="/about">About </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">home </NuxtLink>
+            <NuxtLink to="/products">Products </NuxtLink>
           </li>
         </ul>
       </div>

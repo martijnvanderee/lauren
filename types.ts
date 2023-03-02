@@ -5,4 +5,5 @@ export interface Product {
   date: Date;
   price: number;
   image: string;
+  imageAlt: string;
 }

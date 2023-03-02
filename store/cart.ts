@@ -10,6 +10,7 @@ const p: Product = {
   date: new Date(),
   price: 4,
   image: "string",
+  imageAlt: "tihs is a title",
 };
 const i = {
   amount: 0,
@@ -77,15 +78,13 @@ export const useCartStore = defineStore(
     const IsInDatabase = (id: string) =>
       cart.findIndex((product) => product.id === id) === -1 ? false : true;
 
-    const getProductFile = async (id: string) => {
+    const getProduct = async (id: string) => {
       const queryString = productPath(id);
 
       const ProductFile = await queryContent(queryString).findOne();
 
       return productFileToProduct(ProductFile);
     };
-
-    const isProductFileValid = () => {};
 
     return {
       cart,
@@ -95,7 +94,7 @@ export const useCartStore = defineStore(
       emptyCart,
       deleteProduct,
       IsInDatabase,
-      getProductFile,
+      getProduct,
       getAmount,
       getProducts,
     };

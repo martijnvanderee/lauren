@@ -18,4 +18,5 @@ export const productFileToProduct = (ProductFile: ParsedContent) => ({
   date: ProductFile.date,
   price: ProductFile.price,
   image: ProductFile.image,
+  imageAlt: ProductFile.imageName,
 });
