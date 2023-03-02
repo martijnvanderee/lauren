@@ -1,34 +1,12 @@
 import { defineStore } from "pinia";
 import { computed } from "vue";
-import { Product } from "../types";
+import { Product, Cart } from "../types";
 import { productPath, productFileToProduct } from "../util/constants";
-
-const p: Product = {
-  id: "string",
-  productTitle: "string",
-  description: "string",
-  date: new Date(),
-  price: 4,
-  image: "string",
-  imageAlt: "tihs is a title",
-};
-const i = {
-  amount: 0,
-  product: p,
-  id: "string",
-};
-
-interface Cart {
-  product: Product;
-  amount: number;
-  id: string;
-}
 
 export const useCartStore = defineStore(
   "cart",
   () => {
-    const initialValue: Cart[] = [i];
-    const cart = reactive(initialValue);
+    const cart = reactive<Cart[]>([]);
 
     const getProducts = computed(() => cart);
 

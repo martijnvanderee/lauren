@@ -7,3 +7,9 @@ export interface Product {
   image: string;
   imageAlt: string;
 }
+
+export interface Cart {
+  product: Product;
+  amount: number;
+  id: string;
+}
