@@ -1,6 +1,6 @@
 ---
 id: tttt
-productTitle: sdfdsfasdf
+title: sdfdsfasdf
 description: title1
 date: 2023-01-07T17:05:24.582Z
 amount: 3

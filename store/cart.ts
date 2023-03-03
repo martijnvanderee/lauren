@@ -56,7 +56,7 @@ export const useCartStore = defineStore(
     const IsInDatabase = (id: string) =>
       cart.findIndex((product) => product.id === id) === -1 ? false : true;
 
-    const getProduct = async (id: string) => {
+    const getProduct = async (id: string): Promise<Product> => {
       const queryString = productPath(id);
 
       const ProductFile = await queryContent(queryString).findOne();

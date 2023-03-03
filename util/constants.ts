@@ -1,4 +1,5 @@
 import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+import type { Product } from "../types";
 
 export const NAVBAR_TEXT = {
   LOGO: "Lauren Sleich",
@@ -11,9 +12,9 @@ const navlinks = [
 ];
 
 export const productPath = (path: string) => `/products/${path}`;
-export const productFileToProduct = (ProductFile: ParsedContent) => ({
+export const productFileToProduct = (ProductFile: ParsedContent): Product => ({
   id: ProductFile.id,
-  productTitle: ProductFile.productTitle,
+  title: ProductFile.productTitle,
   description: ProductFile.description,
   date: ProductFile.date,
   price: ProductFile.price,
