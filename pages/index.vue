@@ -11,7 +11,7 @@ useHead({
 });
 
 const query: QueryBuilderParams = {
-  path: "/products",
+  path: "/product",
   limit: 12,
 };
 </script>

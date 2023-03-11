@@ -11,6 +11,8 @@ interface Product {
 }
 
 const props = defineProps<Product>();
+
+console.log("he", /product/ + props.id);
 </script>
 
 <template>

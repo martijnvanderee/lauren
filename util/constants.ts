@@ -11,7 +11,7 @@ const navlinks = [
   { name: "products", link: "/products" },
 ];
 
-export const productPath = (path: string) => `/products/${path}`;
+export const productPath = (path: string) => `/product/${path}`;
 export const productFileToProduct = (ProductFile: ParsedContent): Product => ({
   id: ProductFile.id,
   title: ProductFile.title,

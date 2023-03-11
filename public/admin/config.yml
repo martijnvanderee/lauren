@@ -16,7 +16,7 @@ collections:
     folder: 'content/products'
     format: 'frontmatter'
     create: true
-    slug: '{{title}}'
+    slug: '{{id}}'
     editor:
       preview: false
     fields:

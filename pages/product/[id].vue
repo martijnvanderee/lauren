@@ -10,6 +10,7 @@ const { IsInDatabase, increaseAmount, createProduct, getProduct } =
 console.log(route.params);
 const id = route.params.id as string;
 const product = await getProduct(id);
+// console.log("product", product);
 
 // const handleClick = async (productId: string) =>
 //   IsInDatabase(productId) ? increaseAmount(productId) : createProduct(product);
