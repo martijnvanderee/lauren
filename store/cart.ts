@@ -10,9 +10,21 @@ export const useCartStore = defineStore(
 
     const getProducts = computed(() => cart);
 
-    const getAmount = computed(() =>
+    const getTotalAmount = computed(() =>
       cart.reduce((partialSum, product) => partialSum + product.amount, 0)
     );
+
+    const getTotalPrice = computed(() =>
+      cart.reduce(
+        (partialSum, product) =>
+          partialSum + product.amount * product.product.price,
+        0
+      )
+    );
+
+    const IsProductInCart = computed(() => {
+      return getTotalAmount.value === 0 ? false : true;
+    });
 
     const increaseAmount = (id: string) => {
       const index = findIndexById(id);
@@ -43,7 +55,7 @@ export const useCartStore = defineStore(
     const emptyCart = () => cart.splice(0);
 
     const deleteProduct = (id: string) => {
-      if (IsInDatabase(id)) return;
+      if (!IsInDatabase(id)) return;
 
       cart.splice(findIndexById(id), 1);
     };
@@ -73,8 +85,10 @@ export const useCartStore = defineStore(
       deleteProduct,
       IsInDatabase,
       getProduct,
-      getAmount,
+      getTotalAmount,
       getProducts,
+      getTotalPrice,
+      IsProductInCart,
     };
   },
   {

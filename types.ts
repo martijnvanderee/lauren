@@ -5,7 +5,7 @@ export interface Product {
   date: Date;
   price: number;
   image: string;
-  imageAlt: string;
+  imageName: string;
 }
 
 export interface Cart {

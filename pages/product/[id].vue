@@ -16,7 +16,6 @@ const handleClick = async (productId: string) =>
 
 <template>
   <Navbar />
-  {{ product }}
-  <button @click="handleClick(id)">kopen</button>
+  <button class="btn" @click="handleClick(id)">kopen</button>
   <Footer />
 </template>

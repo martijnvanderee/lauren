@@ -10,15 +10,22 @@ const props = withDefaults(
   {}
 );
 
-const { increaseAmount, decreaseAmount } = useCartStore();
+const cart = useCartStore();
+
+const { increaseAmount, decreaseAmount, deleteProduct, getTotalAmount } =
+  useCartStore();
 
 const open = ref(true);
 
 const handleMinus = () => {
-  increaseAmount(props.cart.id);
+  if (props.cart.amount > 1) decreaseAmount(props.cart.id);
 };
 const handlePlus = () => {
-  decreaseAmount(props.cart.id);
+  increaseAmount(props.cart.id);
+};
+
+const handleCross = () => {
+  deleteProduct(props.cart.id);
 };
 </script>
 
@@ -39,7 +46,7 @@ const handlePlus = () => {
 
         <div class="flex">
           <button
-            type="button"
+            @click="handleCross"
             class="font-medium text-indigo-600 hover:text-indigo-500"
           >
             Remove
@@ -52,7 +59,7 @@ const handlePlus = () => {
           class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1"
         >
           <button
-            data-action="decrement"
+            @click="handleMinus"
             class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
           >
             <span class="m-auto text-2xl font-thin">−</span>
@@ -61,10 +68,10 @@ const handlePlus = () => {
             type="number"
             class="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black md:text-basecursor-default flex items-center text-gray-700 outline-none"
             name="custom-input-number"
-            value="0"
+            :value="cart.amount"
           />
           <button
-            data-action="increment"
+            @click="handlePlus"
             class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
           >
             <span class="m-auto text-2xl font-thin">+</span>

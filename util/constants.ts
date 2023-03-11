@@ -14,10 +14,10 @@ const navlinks = [
 export const productPath = (path: string) => `/products/${path}`;
 export const productFileToProduct = (ProductFile: ParsedContent): Product => ({
   id: ProductFile.id,
-  title: ProductFile.productTitle,
+  title: ProductFile.title,
   description: ProductFile.description,
   date: ProductFile.date,
   price: ProductFile.price,
   image: ProductFile.image,
-  imageAlt: ProductFile.imageName,
+  imageName: ProductFile.imageName,
 });

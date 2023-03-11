@@ -1,11 +1,12 @@
 <script setup lang="ts">
 interface Product {
   id: string;
-  productTitle: string;
+  title: string;
   description?: string;
   date: Date;
   price: number;
   image: string;
+  imageName: string;
 }
 
 const props = defineProps<Product>();
@@ -21,7 +22,7 @@ const props = defineProps<Product>();
       :modifiers="{ effect: 'grayscale' }"
     />
     <div class="card-body">
-      <h2 class="card-title">{{ props.productTitle }}</h2>
+      <h2 class="card-title">{{ props.title }}</h2>
       <p>{{ props.description }}</p>
       <p>{{ props.price }}</p>
       <div class="card-actions justify-end">
