@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Product } from "../types";
 interface Product {
   id: string;
   title: string;
@@ -10,6 +11,8 @@ interface Product {
 }
 
 const props = defineProps<Product>();
+
+console.log("card", props);
 </script>
 
 <template>

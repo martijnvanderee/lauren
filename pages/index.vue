@@ -4,7 +4,6 @@ import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import Card from "../components/Card.vue";
-import { useCartStore } from "../store/cart";
 
 useHead({
   script: [
@@ -14,10 +13,8 @@ useHead({
 
 const query: QueryBuilderParams = {
   path: "/products",
-  limit: 5,
+  limit: 8,
 };
-
-const cart = useCartStore();
 </script>
 
 <template>
