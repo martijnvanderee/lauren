@@ -5,6 +5,6 @@ date: 2023-03-11T07:27:29.734Z
 amount: 9
 price: 4
 imageName: this image is called horse
-image: /img/frander-rosales-v-yYCIvY3k7vc-unsplash.jpg
+image: /frander-rosales-v-yYCIvY3k7vc-unsplash.jpg
 id: wxMkCPDdzuyRK3hdv7lZm
 ---
