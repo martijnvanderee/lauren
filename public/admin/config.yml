@@ -16,7 +16,7 @@ collections:
     folder: 'content/products'
     format: 'frontmatter'
     create: true
-    slug: '{{id}}'
+    slug: '{{title}}'
     editor:
       preview: false
     fields:
@@ -25,9 +25,10 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Amount', name: 'amount', widget: 'number',value_type: "int" }
       - { label: 'Price', name: 'price', widget: 'number',value_type: "int" }
+      - { label: 'Image Name', name: 'imageName', widget: 'string'}
       - label: 'Cover Image'
         name: 'image'
         widget: 'image'
         tagname: ''
         output_filename_only: true
-      - { label: 'Image Name', name: 'imageName', widget: 'string'}
+     
