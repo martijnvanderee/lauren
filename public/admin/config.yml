@@ -3,7 +3,6 @@ backend:
   branch: main 
 
 media_folder: static/img
-public_folder: /img
 media_library:
   name: cloudinary
   output_filename_only: true
