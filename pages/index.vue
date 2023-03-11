@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
-
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import Card from "../components/Card.vue";
@@ -13,7 +12,7 @@ useHead({
 
 const query: QueryBuilderParams = {
   path: "/products",
-  limit: 8,
+  limit: 12,
 };
 </script>
 
