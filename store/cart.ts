@@ -69,13 +69,11 @@ export const useCartStore = defineStore(
       cart.findIndex((product) => product.id === id) === -1 ? false : true;
 
     const getProduct = async (id: string): Promise<Product> => {
-      const queryString = productPath(id);
+      const ProductFile = await queryContent("products")
+        .where({ id })
+        .findOne();
 
-      console.log("queryString", queryString);
-
-      const ProductFile = await queryContent(queryString).findOne();
-
-      // return productFileToProduct(ProductFile);
+      return productFileToProduct(ProductFile);
     };
 
     return {

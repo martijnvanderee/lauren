@@ -10,14 +10,14 @@ const { IsInDatabase, increaseAmount, createProduct, getProduct } =
 console.log(route.params);
 const id = route.params.id as string;
 const product = await getProduct(id);
-// console.log("product", product);
+console.log("product", product);
 
-// const handleClick = async (productId: string) =>
-//   IsInDatabase(productId) ? increaseAmount(productId) : createProduct(product);
+const handleClick = async (productId: string) =>
+  IsInDatabase(productId) ? increaseAmount(productId) : createProduct(product);
 </script>
 
 <template>
   <Navbar />
-  <!-- <button class="btn" @click="handleClick(id)">kopen</button> -->
+  <button class="btn" @click="handleClick(id)">kopen</button>
   <Footer />
 </template>
