@@ -14,8 +14,6 @@ const query: QueryBuilderParams = {
   path: "/products",
   limit: 12,
 };
-
-console.log(query, "query");
 </script>
 
 <template>

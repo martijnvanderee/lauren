@@ -7,15 +7,16 @@ const route = useRoute();
 const { IsInDatabase, increaseAmount, createProduct, getProduct } =
   useCartStore();
 
+console.log(route.params);
 const id = route.params.id as string;
 const product = await getProduct(id);
 
-const handleClick = async (productId: string) =>
-  IsInDatabase(productId) ? increaseAmount(productId) : createProduct(product);
+// const handleClick = async (productId: string) =>
+//   IsInDatabase(productId) ? increaseAmount(productId) : createProduct(product);
 </script>
 
 <template>
   <Navbar />
-  <button class="btn" @click="handleClick(id)">kopen</button>
+  <!-- <button class="btn" @click="handleClick(id)">kopen</button> -->
   <Footer />
 </template>

@@ -71,9 +71,11 @@ export const useCartStore = defineStore(
     const getProduct = async (id: string): Promise<Product> => {
       const queryString = productPath(id);
 
-      const ProductFile = await queryContent(queryString).findOne();
+      // const ProductFile = await queryContent(queryString).findOne();
 
-      return productFileToProduct(ProductFile);
+      console.log("ProductFile", queryString);
+
+      // return productFileToProduct(ProductFile);
     };
 
     return {
