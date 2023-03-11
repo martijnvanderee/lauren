@@ -6,6 +6,7 @@ media_folder: static/img
 public_folder: /img
 media_library:
   name: cloudinary
+  output_filename_only: true
   config:
     cloud_name: dta9vptzh
     api_key: 651661895481873

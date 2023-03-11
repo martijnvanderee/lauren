@@ -11,8 +11,6 @@ interface Product {
 }
 
 const props = defineProps<Product>();
-
-console.log("card", props);
 </script>
 
 <template>
