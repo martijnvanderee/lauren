@@ -15,13 +15,15 @@ const props = defineProps<Product>();
 
 <template>
   <div class="card bg-base-100 shadow-xl">
-    <NuxtImg
-      provider="cloudinary"
-      :src="props.image"
-      width="1000"
-      height="1000"
-      :modifiers="{ effect: 'grayscale' }"
-    />
+    <NuxtLink :to="'/product/' + props.id" class="cursor-pointer">
+      <NuxtImg
+        provider="cloudinary"
+        :src="props.image"
+        width="1000"
+        height="1000"
+        :modifiers="{ effect: 'grayscale' }"
+      />
+    </NuxtLink>
     <div class="card-body">
       <h2 class="card-title">{{ props.title }}</h2>
       <p>{{ props.description }}</p>
