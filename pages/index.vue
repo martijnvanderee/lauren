@@ -3,7 +3,6 @@ import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import Card from "../components/Card.vue";
-import Hero from "../components/Hero.vue";
 
 import { MAX_AMOUNT_PRODUCTS_HOMEPAGE } from "../util/constants";
 
@@ -37,9 +36,7 @@ const query: QueryBuilderParams = {
     <section>
       <div class="content">
         <div class="max-w-5xl mx-auto px-2">
-          <div class="row">
-            <Hero />
-          </div>
+          <div class="row"></div>
         </div>
       </div>
     </section>
