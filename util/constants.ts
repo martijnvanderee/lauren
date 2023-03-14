@@ -11,6 +11,9 @@ const navlinks = [
   { name: "products", link: "/products" },
 ];
 
+export const MAX_AMOUNT_PRODUCTS_HOMEPAGE = 6;
+export const PRODUCT_PAGE = "/product";
+
 export const productPath = (path: string) => `/products/${path}`;
 export const productFileToProduct = (ProductFile: ParsedContent): Product => ({
   id: ProductFile.id,

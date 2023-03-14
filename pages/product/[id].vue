@@ -7,10 +7,8 @@ const route = useRoute();
 const { IsInDatabase, increaseAmount, createProduct, getProduct } =
   useCartStore();
 
-console.log(route.params);
 const id = route.params.id as string;
 const product = await getProduct(id);
-console.log("product", product);
 
 const handleClick = async (productId: string) =>
   IsInDatabase(productId) ? increaseAmount(productId) : createProduct(product);

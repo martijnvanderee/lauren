@@ -15,7 +15,7 @@ const { getProducts, IsProductInCart } = storeToRefs(cart);
 
     <template v-if="!IsProductInCart">
       <div>Nothing Left in cart</div>
-      <button class="btn"><NuxtLink to="/">go back </NuxtLink></button>
+      <NuxtLink to="/" class="btn">go back </NuxtLink>
     </template>
 
     <template v-for="cart in getProducts" v-else>
