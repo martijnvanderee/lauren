@@ -1,5 +1,5 @@
 <script setup plang="ts">
-console.log("test");
+console.log("test1");
 </script>
 
 <template>
