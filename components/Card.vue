@@ -30,7 +30,7 @@ const props = defineProps<Product>();
       <p>{{ props.price }}</p>
       <div class="card-actions justify-end">
         <NuxtLink :to="'/product/' + props.id">
-          <button class="btn btn-primary">Buy Now</button>
+          <button class="btn btn-primary font-sans">Koop nu</button>
         </NuxtLink>
       </div>
     </div>

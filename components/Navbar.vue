@@ -7,6 +7,14 @@ import Basket_card from "./Basket_card.vue";
 const cart = useCartStore();
 const { getTotalAmount, IsProductInCart, getTotalPrice, getProducts } =
   storeToRefs(cart);
+
+useHead({
+  script: [
+    {
+      src: "https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js",
+    },
+  ],
+});
 </script>
 
 <template>
@@ -15,22 +23,30 @@ const { getTotalAmount, IsProductInCart, getTotalPrice, getProducts } =
       <NuxtLink class="btn btn-ghost normal-case text-xl text-white" to="/"
         >{{ NAVBAR_TEXT.LOGO }}
       </NuxtLink>
+      <lottie-player
+        src="https://assets9.lottiefiles.com/private_files/lf30_y71nkwza.json"
+        background="transparent"
+        speed="1"
+        style="width: 75px; height: 50px"
+        loop
+        autoplay
+      ></lottie-player>
     </div>
     <div class="">
       <div class="navbar-center lg:flex">
         <ul class="menu menu-horizontal px-1 text-white">
           <li>
-            <NuxtLink to="/about">About </NuxtLink>
+            <NuxtLink to="/about">Over mij </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/products">Products </NuxtLink>
+            <NuxtLink to="/products">Producten </NuxtLink>
           </li>
         </ul>
       </div>
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="">
-          <button class="btn gap-2">
-            Cart
+          <button class="btn glas gap-2 font-sans">
+            Winkel
             <div class="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +62,7 @@ const { getTotalAmount, IsProductInCart, getTotalPrice, getProducts } =
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              <span class="badge badge-sm indicator-item"
+              <span class="badge badge-sm indicator-item bg-primary"
                 >{{ getTotalAmount }}
               </span>
             </div>

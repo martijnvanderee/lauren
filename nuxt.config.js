@@ -2,6 +2,13 @@ import tailwindTypography from '@tailwindcss/typography'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  css: [
+  {
+    src: '~/assets/scss/main.scss',
+    lang: 'scss'
+  }
+],
+ 
   modules: ["@nuxtjs/tailwindcss", "@nuxt/content",'@nuxt/image-edge', '@pinia/nuxt',  '@pinia-plugin-persistedstate/nuxt'],
   image: {
     cloudinary: {
