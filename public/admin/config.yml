@@ -35,6 +35,7 @@ collections:
       - label: "Colors"
         name: "colors"
         widget: "select"
+        multiple: true
         options:
         - { label: "groen", value: "#ffff" }
         - { label: "paars", value: "#aaa" }
