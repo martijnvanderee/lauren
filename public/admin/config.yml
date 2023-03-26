@@ -32,8 +32,7 @@ collections:
         widget: 'image'
         tagname: ''
         output_filename_only: true
-        config:
-          multiple: true
+        allow_multiple: true
       - label: "Colors"
         name: "colors"
         widget: "select"
