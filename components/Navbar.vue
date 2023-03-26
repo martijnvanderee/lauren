@@ -89,7 +89,7 @@ useHead({
             </template>
           </div>
 
-          <div class="card-body" v-else>No items in basket</div>
+          <div class="card-body" v-else>Geen producten in mandje</div>
         </div>
       </div>
     </div>

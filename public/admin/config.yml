@@ -28,10 +28,12 @@ collections:
       - { label: 'Price', name: 'price', widget: 'number', value_type: "float",  min: 0.01, step: 0.01 }
       - { label: 'Image Name', name: 'imageName', widget: 'string'}
       - label: 'Cover Image'
-        name: 'image'
+        name: 'Image'
         widget: 'image'
         tagname: ''
         output_filename_only: true
+        config:
+          multiple: true
       - label: "Colors"
         name: "colors"
         widget: "select"
