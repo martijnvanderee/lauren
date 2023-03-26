@@ -1,4 +1,6 @@
-<style></style>
+<script setup plang="ts">
+console.log("test");
+</script>
 
 <template>
   <div class="hero my-12">
