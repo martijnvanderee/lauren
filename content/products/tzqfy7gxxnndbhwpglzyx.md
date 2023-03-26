@@ -6,7 +6,7 @@ date: 2023-03-26T19:08:06.600Z
 amount: 1
 price: 1.5
 imageName: Dit zijn likstenen
-Image:
+image:
   - /liksteen_paars.heic
   - /liksteen_geel.heic
 colors:

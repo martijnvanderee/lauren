@@ -8,7 +8,6 @@ console.log("test1");
       <NuxtImg
         provider="cloudinary"
         src="lauren2"
-        :modifiers="{ effect: 'grayscale' }"
         class="max-w-sm rounded-lg shadow-2xl"
       />
       <div>
