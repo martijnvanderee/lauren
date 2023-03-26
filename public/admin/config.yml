@@ -32,6 +32,12 @@ collections:
         widget: 'image'
         tagname: ''
         output_filename_only: true
-      - { label: 'Color', name: 'color', widget: 'color', enableAlpha: true, allowInput: true }
+      - label: "Colors"
+        name: "colors"
+        widget: "select"
+        options:
+        - { label: "groen", value: "#ffff" }
+        - { label: "paars", value: "#aaa" }
+        - { label: "wit", value: "#ccc" }
 
      
