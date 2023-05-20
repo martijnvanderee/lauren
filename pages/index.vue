@@ -7,6 +7,7 @@ import Hero from "../components/Hero.vue";
 import { MAX_AMOUNT_PRODUCTS_HOMEPAGE } from "../util/constants";
 
 const { data } = await useFetch("/api/hello");
+
 useHead({
   script: [
     { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" },
