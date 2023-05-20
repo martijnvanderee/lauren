@@ -23,14 +23,14 @@ useHead({
       <NuxtLink class="btn btn-ghost normal-case text-xl text-white" to="/"
         >{{ NAVBAR_TEXT.LOGO }}
       </NuxtLink>
-      <lottie-player
+      <!-- <lottie-player
         src="https://assets9.lottiefiles.com/private_files/lf30_y71nkwza.json"
         background="transparent"
         speed="1"
         style="width: 75px; height: 50px"
         loop
         autoplay
-      ></lottie-player>
+      ></lottie-player> -->
     </div>
     <div class="">
       <div class="navbar-center lg:flex">
